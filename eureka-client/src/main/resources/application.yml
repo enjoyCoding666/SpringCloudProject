@@ -1,8 +1,14 @@
 spring:
   application:
-    name:
-#Ö¸¶¨Î¢·şÎñÃû³Æ
-      eureka-client
+    #æŒ‡å®šå¾®æœåŠ¡åç§°
+    name: eureka-client
+
+
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+
 
 server:
   port:  2222
@@ -10,6 +16,5 @@ server:
 eureka:
   client:
     serviceUrl:
-#  Ö¸¶¨·şÎñ×¢²áÖĞĞÄµÄÎ»ÖÃ
-      defaultZone:
-         http://localhost:1111/eureka/
+      #  æŒ‡å®šæœåŠ¡æ³¨å†Œä¸­å¿ƒçš„ä½ç½®
+      defaultZone:  http://localhost:1111/eureka/
