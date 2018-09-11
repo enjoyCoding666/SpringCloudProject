@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * Created by lenovo on  九月
  */
@@ -24,6 +26,10 @@ public class DcController {
     @GetMapping("/dc")
    public String dc( ) {
        ServiceInstance serviceInstance=discoveryClient.getLocalServiceInstance();
+       List<String> serviceList=discoveryClient.getServices();
+       for(String service : serviceList) {
+           System.out.println("Service:"+ service );
+       }
        System.out.println( "ServiceHost："+ serviceInstance.getHost()  );
        return  "service";
    }
