@@ -23,9 +23,11 @@ public class DcController {
 
     @GetMapping("/consumer")
     public  String dc() {
+//        用choose()函数选出一个eureka-client的服务实例，这个服务实例的基本信息存储在ServiceInstance
         ServiceInstance serviceInstance=loadBalancerClient.choose("eureka-client");
         String url="http://"+ serviceInstance.getHost() +":" +serviceInstance.getPort() +"/dc";
         System.out.println(url);
+//        通过restTemplate向url发起请求，以String的形式返回数据
         return  restTemplate.getForObject(url,String.class );
     }
 

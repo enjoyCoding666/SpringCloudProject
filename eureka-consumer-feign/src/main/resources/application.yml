@@ -1,14 +1,13 @@
 spring:
   application:
-    #指定微服务名称
-    name: eureka-client
+    name: eureka-consumer-feign
 
 
 server:
-  port:  2222
+  port: 5555
+
 
 eureka:
   client:
     serviceUrl:
-      #  指定服务注册中心的位置
       defaultZone:  http://localhost:1111/eureka/

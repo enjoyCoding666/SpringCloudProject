@@ -7,4 +7,6 @@
 Caused by: org.springframework.context.ApplicationContextException: Unable to start EmbeddedWebApplicationContext due to missing EmbeddedServletContainerFactory bean.<br>
 解决方案： 启动类上方添加@SpringBootApplication。另外，还要注意启动类中的 .class文件名称是否与类名一致。<br>       
 new SpringApplicationBuilder(EurekaConsumerApplication.class).web(true).run(args);
-
+4.启动Ribbon进行服务消费，报错：
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server  <br>
+解决方案; 修正 eureka.client.service-url.defaultZone .

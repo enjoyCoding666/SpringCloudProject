@@ -26,7 +26,9 @@ public class DcController {
     @GetMapping("/dc")
    public String dc( ) {
        ServiceInstance serviceInstance=discoveryClient.getLocalServiceInstance();
+       //获取服务列表
        List<String> serviceList=discoveryClient.getServices();
+        System.out.println("服务如下所示：");
        for(String service : serviceList) {
            System.out.println("Service:"+ service );
        }
