@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
  * Created by lenovo on  九月
  */
 @RestController
-public class DcController {
+public class ConsumerController {
 
     @Autowired
     private RestTemplate restTemplate;

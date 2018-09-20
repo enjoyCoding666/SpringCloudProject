@@ -14,4 +14,4 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 访问Config服务端，http://localhost:3001/config-client/dev/master 跟 http://localhost:3001/config-client/lin/master的内容不一样？
 为什么profile只有设定为dev才可以查看config-client-dev.yml的内容。 <br>
 解决方案： 在spring.cloud.config.profile 这个配置中， dev表示开发环境配置文件、test表示测试环境、pro表示正式环境
-6.分布式Config中，客户端无法访问服务端配置中心。如何破解？
+6.分布式Config中，客户端无法访问服务端配置中心。如何破解？  <br>
