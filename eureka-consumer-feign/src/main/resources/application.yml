@@ -2,12 +2,15 @@ spring:
   application:
     name: eureka-consumer-feign
 
-
 server:
   port: 5555
-
 
 eureka:
   client:
     serviceUrl:
       defaultZone:  http://localhost:1111/eureka/
+
+#启动hystrix
+feign:
+  hystrix:
+    enabled: true
