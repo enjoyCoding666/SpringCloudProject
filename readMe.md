@@ -18,3 +18,7 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 6.分布式Config中，客户端无法访问服务端配置中心。如何破解？  <br>
 7.断路器hystrix不起作用. <br>
 解决方案：这是由于版本原因造成的。需要在配置中开启 feign.hystrix.enabled=true   <br>
+8.maven打包成jar包后，无法运行？ <br>
+路径含有中文，无法打包。 <br>
+9.配置多个高可用服务注册中心时，一直报错：
+Caused by: org.yaml.snakeyaml.parser.ParserException: while parsing MappingNode  <br>
