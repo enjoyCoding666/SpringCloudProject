@@ -10,7 +10,7 @@
 4.maven打包成jar包后，无法运行？ <br>
 解决方法：路径含有中文，无法打包，改成英文就可以了。 <br>
 5.配置多个高可用服务注册中心时，<br>
-cd G:\JavaWebDemo\SpringCloudProject\eureka-server\target    <br>
+cd E:\JavaWebDemo\SpringCloudProject\eureka-server-cluster\target    <br>
 java -jar  eureka-server-0.0.1-SNAPSHOT.jar  --spring.profiles.active=peer1  <br>
 java -jar  eureka-server-0.0.1-SNAPSHOT.jar  --spring.profiles.active=peer2   <br>
 一直报错：
