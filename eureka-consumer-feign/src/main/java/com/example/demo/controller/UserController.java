@@ -1,22 +1,21 @@
 package com.example.demo.controller;
 
-import com.example.demo.feignInterface.dc.DcClient;
+import com.example.demo.feignInterface.user.UserFeignClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * Created by lenovo on  九月
- */
 @RestController
-public class DcController {
+public class UserController {
 
     @Autowired
-    private DcClient dcClient;
+    private UserFeignClient userFeignClient;
 
-    @GetMapping("/consumer")
-    public String dc(){
-        return  dcClient.consumer();
+    @GetMapping("user/name")
+    public  String getUserName(){
+        return userFeignClient.getUserName();
     }
 
 }
+
+

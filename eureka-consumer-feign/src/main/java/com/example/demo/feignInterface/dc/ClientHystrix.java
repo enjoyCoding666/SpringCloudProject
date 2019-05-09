@@ -1,4 +1,4 @@
-package com.example.demo.feignInterface;
+package com.example.demo.feignInterface.dc;
 
 import org.springframework.stereotype.Component;
 
