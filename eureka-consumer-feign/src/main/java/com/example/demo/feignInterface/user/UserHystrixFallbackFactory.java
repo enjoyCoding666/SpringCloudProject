@@ -13,14 +13,17 @@ public class UserHystrixFallbackFactory  implements FallbackFactory<UserFeignCli
 
     @Override
     public UserFeignClient create(Throwable cause) {
-        log.info("fallback reason was: {} ", cause.getMessage());
+        System.out.println("====================================》fallback reason was:  " + cause.getMessage());
 
         return new UserClientFallbackFactory();
-        //也可以不写UserClientFallbackFactory类，直接写成以下形式：
-//        return new UserFeignClient() {
+        //也可以不写UserClientFallbackFactory类，直接用匿名对象写成以下形式：
+//        return new UserFeignClient(Integer id) {
 //            @Override
-//            public String getUserName() {
-//                return "降级信息";
+//            public JSONObject getUserNameById() {
+//                 JSONObject resultJson = new JSONObject();
+//                 resultJson.put("id",  "-1" );
+//                 resultJson.put("name", "null"   );
+//                 return resultJson;
 //            }
 //        };
 

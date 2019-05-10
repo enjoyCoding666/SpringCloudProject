@@ -1,7 +1,11 @@
 package com.example.demo.feignInterface.user;
 
+import com.alibaba.fastjson.JSONObject;
+import com.example.demo.pojo.User;
 import org.springframework.cloud.netflix.feign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 /**
@@ -10,6 +14,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 @FeignClient(value = "eureka-client",fallbackFactory = UserHystrixFallbackFactory.class)
 public interface UserFeignClient {
 
-    @GetMapping(value = "/user/name")
-    String getUserName();
+    @PostMapping(value = "/user/name/{id}")
+    JSONObject getUserNameById(@PathVariable("id") Integer id);
+
+    @PostMapping(value = "/user")
+    User getUserById(@RequestParam("id") Integer id);
 }

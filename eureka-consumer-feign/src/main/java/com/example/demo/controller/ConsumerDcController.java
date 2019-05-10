@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by lenovo on  九月
  */
 @RestController
-public class DcController {
+public class ConsumerDcController {
 
     @Autowired
     private DcClient dcClient;
