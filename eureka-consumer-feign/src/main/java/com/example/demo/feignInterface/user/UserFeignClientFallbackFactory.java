@@ -9,13 +9,13 @@ import org.springframework.stereotype.Component;
  */
 @Slf4j
 @Component
-public class UserHystrixFallbackFactory  implements FallbackFactory<UserFeignClient> {
+public class UserFeignClientFallbackFactory implements FallbackFactory<UserFeignClient> {
 
     @Override
     public UserFeignClient create(Throwable cause) {
         System.out.println("====================================》fallback reason was:  " + cause.getMessage());
 
-        return new UserClientFallbackFactory();
+        return new UserFeignClientHystrix();
         //也可以不写UserClientFallbackFactory类，直接用匿名对象写成以下形式：
 //        return new UserFeignClient(Integer id) {
 //            @Override

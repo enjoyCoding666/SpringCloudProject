@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 /**
  *  使用fallbackFactory捕获异常，并进行服务降级。
  */
-@FeignClient(value = "eureka-client",fallbackFactory = UserHystrixFallbackFactory.class)
+@FeignClient(value = "eureka-client",fallbackFactory = UserFeignClientFallbackFactory.class)
 public interface UserFeignClient {
 
     @PostMapping(value = "/user/name/{id}")

@@ -6,7 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 @Component
-public class UserClientFallbackFactory implements UserFeignClient {
+public class UserFeignClientHystrix implements UserFeignClient {
 
     /**
      * 服务熔断
